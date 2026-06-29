@@ -1,1 +1,3 @@
-2nd sprin project
+2nd sprint project
+
+Корзина покупок с иерархией продуктов (Meat, Apple) и подсчётом сумм со скидкой и без.
