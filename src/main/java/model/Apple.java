@@ -4,7 +4,7 @@ import model.constants.Colour;
 
 
 
-public class Apple extends Food implements Discountable{
+public class Apple extends Food{
     private String colour;
     public Apple(int amount, double price, String colour) {
         isVegetarian = true;
@@ -15,10 +15,6 @@ public class Apple extends Food implements Discountable{
 
     @Override 
     public double getDiscount() {
-        if(colour.equals(Colour.red)) {
-            return Discount.discount;
-        } else {
-            return Discount.noDiscount;
-        }
+        return colour.equals(Colour.RED) ? Discount.DISCOUNT : Discount.NO_DISCOUNT;
     }
 }
