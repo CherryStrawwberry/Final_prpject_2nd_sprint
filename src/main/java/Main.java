@@ -6,17 +6,16 @@ import model.constants.Colour;
 
 public class Main {
 
-public static void main(String[] args) {
-Meat meat = new Meat(5, 100);
-Apple redApple = new Apple(10, 50, Colour.red);
-Apple greenApple = new Apple(8, 60, Colour.green);
-Food[] food = {meat, redApple, greenApple};
+    public static void main(String[] args) {
+        Meat meat = new Meat(5, 100);
+        Apple redApple = new Apple(10, 50, Colour.RED);
+        Apple greenApple = new Apple(8, 60, Colour.GREEN);
+        Food[] food = {meat, redApple, greenApple};
 
-ShoppingCart shoppingCart = new ShoppingCart(food);
+        ShoppingCart shoppingCart = new ShoppingCart(food);
 
-System.out.println("Total price: " + shoppingCart.getTotalPrice());
-System.out.println("Total price with discount: " + shoppingCart.getTotalPriceWithDiscount());
-System.out.println("Total price vegetarian: " + shoppingCart.getTotalPriceVegetarian());
-
-}
+        System.out.printf("Total price: %.1f%n", shoppingCart.getTotalPrice());
+        System.out.printf("Total price with discount: %.1f%n", shoppingCart.getTotalPriceWithDiscount());
+        System.out.printf("Total price vegetarian: %.1f%n", shoppingCart.getTotalPriceVegetarian());
+    }
 }

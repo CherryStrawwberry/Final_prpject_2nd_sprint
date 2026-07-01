@@ -12,25 +12,25 @@ public class ShoppingCart {
     }
     public double getTotalPrice() {
         totalPrice = 0;
-        for (int i = 0; i < food.length; i++) {
-            totalPrice = totalPrice + food[i].getPrice() * food[i].getAmount();
+        for (Food item : food) {
+            totalPrice += item.getPrice() * item.getAmount();
         }
         return totalPrice;
     }
 
     public double getTotalPriceWithDiscount() {
         totalPrice = 0;
-        for (int i = 0; i < food.length; i++) {
-            totalPrice = totalPrice + (food[i].getPrice() * food[i].getAmount()) - (food[i].getPrice() * food[i].getAmount() * food[i].getDiscount() / 100);
+        for (Food item : food) {
+            totalPrice += (item.getPrice() * item.getAmount()) - (item.getPrice() * item.getAmount() * item.getDiscount() / 100);
         }
         return totalPrice;
     }
 
     public double getTotalPriceVegetarian() {
         totalPrice = 0;
-        for (int i = 0; i < food.length; i++) {
-            if (food[i].isVegetarian()) {
-                totalPrice = totalPrice + food[i].getPrice() * food[i].getAmount();
+        for (Food item : food) {
+            if (item.isVegetarian()) {
+                totalPrice += item.getPrice() * item.getAmount();
             }
         }
         return totalPrice;
